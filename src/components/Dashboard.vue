@@ -1,33 +1,38 @@
 <template>
   <div>
-    <div class="container">
-      <h1>Admin Dashboard</h1>
-      <div class="messages">
-        <ul>
-          <li>
-            <h4>Messages</h4>
-          </li>
-          <li v-for="(message, index) in messages" :key="index">
-            <div class="cell name">
-              {{ message.name }}
-            </div>
-            <div class="cell email">
-              {{ message.email }}
-            </div>
-            <div class="cell message">
-              {{ message.message }}
-            </div>
-          </li>
-        </ul>
-      </div>
+    <h1>Admin Dashboard</h1>
+    <div class="messages">
+      <ul>
+        <li>
+          <h4>Messages</h4>
+        </li>
+        <li v-for="(message, index) in messages" :key="index">
+          <div class="cell name">
+            {{ message.name }}
+          </div>
+          <div class="cell email">
+            {{ message.email }}
+          </div>
+          <div class="cell message">
+            {{ message.message }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="addproject">
+      <AddProject />
     </div>
   </div>
 </template>
 
 <script>
 import db from './firebaseInit'
+import AddProject from './AddProject'
 
 export default {
+  components: {
+    AddProject
+  },
   data () {
     return {
       messages: []

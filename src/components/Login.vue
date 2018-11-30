@@ -23,8 +23,8 @@
         </form>
       </div>
     </div>
-    <Dashboard v-if="logged" />
     <div class="container" v-if="logged">
+      <Dashboard />
       <button @click="logout">Logout</button>
     </div>
   </div>
@@ -58,15 +58,6 @@ export default {
         ).catch(() => {
           this.errMessage = true
         })
-        // .then(
-        //   user => {
-        //     this.logged = true,
-        //     this.errMessage = false
-        //   },
-        //   err => {
-        //     this.errMessage = true
-        //   }
-        // )
       e.preventDefault()
     },
     logout: function () {

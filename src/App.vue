@@ -24,9 +24,10 @@ export default {
     font-family: sans-serif
   .container
     width: 80%
-    margin: 20px auto
+    margin: 30px auto
   h1
     border-bottom: 1px solid #bbb
+    margin-top: 30px
   ul
     list-style: none
 
