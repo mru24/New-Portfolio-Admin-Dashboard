@@ -141,13 +141,15 @@ export default {
         item: this.item,
         showTags: false,
         category: this.category
-      }).then(
-        this.success = true,
+      }).then(docRef => {
+        console.log('Message sent: ', docRef.id)
+        this.success = true
         this.fail = false
-      ).catch(
-        this.fail = true,
+      }).catch(error => {
+        console.error('Error sending message: ', error)
+        this.fail = true
         this.success = false
-      )
+      })
     },
     resetMessages () {
       this.fail = false
