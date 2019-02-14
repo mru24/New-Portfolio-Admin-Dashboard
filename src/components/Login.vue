@@ -83,7 +83,7 @@ export default {
     font-size: 22px
     text-align: center
   form
-    width: 80%
+    width: 300px
     margin: 20px auto
     background: #57b633
     padding: 20px
@@ -115,5 +115,10 @@ button
 .v-enter, .v-leave-to
   opacity: 0
   transform: scale(0)
+
+@media only screen and (max-width: 500px)
+  .content
+    form
+      width: 90%
 
 </style>
